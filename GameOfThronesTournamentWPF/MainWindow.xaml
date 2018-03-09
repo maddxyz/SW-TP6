@@ -1,0 +1,26 @@
+﻿<Window x:Class="GameOfThronesTournamentWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GameOfThronesTournamentWPF"
+        mc:Ignorable="d"
+        Title="Game of thrones Tournement WPF - IY" SizeToContent="WidthAndHeight" Background="#FF4B4848" WindowStartupLocation="CenterScreen" >
+    <StackPanel>
+        <TextBlock Margin="50" FontSize="20">What would you like to do ?</TextBlock>
+        <Button Margin="19,10,20,10" Click="ShowHouses_Click">Afficher la liste des Maisons</Button>
+        <Button Margin="19,10,20,10" Click="ShowChars_Click">Afficher la liste des Personnages</Button>
+        <Button Margin="19,10,20,10" Click="ShowWars_Click">Afficher la liste des Batailles</Button>
+        <Button Margin="19,10,20,10" Click="Sho">Afficher la liste de votre choix</Button>
+
+        <ListBox Margin="10,5,10,5" x:Name="ResList" Height="266">
+            
+        </ListBox>
+        
+        <!--<ListView Margin="10,5,10,5" Height="250" Name="ResView">
+            
+        </ListView>-->
+        
+        <Button Margin="196,30,20,10">Quit</Button>
+    </StackPanel>
+</Window>
