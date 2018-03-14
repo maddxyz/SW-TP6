@@ -32,5 +32,10 @@ namespace EntitiesLayer.DTOs
             DefArmy = f.DefArmy.Id;
             WinningArmy = f.WinningArmy.Id;
         }
+
+        public override string ToString()
+        {
+            return ("Army " + AttArmy + " VS Army " + DefArmy);
+        }
     }
 }

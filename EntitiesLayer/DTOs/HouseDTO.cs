@@ -31,5 +31,10 @@ namespace EntitiesLayer.DTOs
             Name = house.Name;
             NumberOfUnits = house.NumberOfUnits;
         }
+
+        public override string ToString()
+        {
+            return ("House " + Name).Substring(0, 50);
+        }
     }
 }
