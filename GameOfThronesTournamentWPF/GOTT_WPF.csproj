@@ -94,5 +94,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ApiGOT\ApiGOT.csproj">
+      <Project>{82f61d56-2bc5-4bb2-a828-e7d31720213a}</Project>
+      <Name>ApiGOT</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
