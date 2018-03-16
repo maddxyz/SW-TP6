@@ -12,6 +12,7 @@
         <Button Margin="19,10,20,10" Click="ShowChars_Click">Afficher la liste des Personnages</Button>
         <Button Margin="19,10,20,10" Click="ShowWars_Click">Afficher la liste des Batailles</Button>
         <Button Margin="19,10,20,10" Click="Sho">Afficher la liste de votre choix</Button>
+        <Button Margin="19,10,20,10" Click="Export_Click">Exporter la liste des maisons</Button>
 
         <ListBox Margin="10,5,10,5" x:Name="ResList" Height="266">
             

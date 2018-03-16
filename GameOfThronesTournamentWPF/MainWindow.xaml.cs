@@ -16,6 +16,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Newtonsoft.Json;
+using Microsoft.Win32;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace GameOfThronesTournamentWPF
 {
@@ -95,6 +98,38 @@ namespace GameOfThronesTournamentWPF
         private void Sho(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private async void Export_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                List<HouseDTO> houses = new List<HouseDTO>();
+
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://localhost:11526/");
+                    client.DefaultRequestHeaders.Accept.Clear();
+                    client.DefaultRequestHeaders.Accept.Add(
+                        new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
+                    HttpResponseMessage response = await client.GetAsync("api/house/");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        string temp = await response.Content.ReadAsStringAsync();
+                        houses = JsonConvert.DeserializeObject<List<HouseDTO>>(temp);
+                    }
+                }
+
+                XmlSerializer serializer = new XmlSerializer(typeof(List<HouseDTO>));
+
+                using (StreamWriter wr = new StreamWriter(saveFileDialog.FileName))
+                {
+                    serializer.Serialize(wr, houses);
+                }
+
+                MessageBox.Show("List of houses saved !");
+            }
         }
     }
 }
