@@ -14,11 +14,12 @@
         <Button Margin="19,10,20,10" Click="Sho">Afficher la liste de votre choix</Button>
         <Button Margin="19,10,20,10" Click="Export_Click">Exporter la liste des maisons</Button>
 
-        <ListView Margin="10,5,10,5" x:Name="ResList" Height="266">
-            <GridView>
-                
-            </GridView>
-            
+        <ListView Margin="10,5,10,5" x:Name="ResList" Height="266" ItemsSource="{Binding}">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <EventSetter Event="PreviewMouseLeftButtonDown" Handler="ListViewItem_PreviewMouseLeftButtonDown" />
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
         
         <!--<ListView Margin="10,5,10,5" Height="250" Name="ResView">

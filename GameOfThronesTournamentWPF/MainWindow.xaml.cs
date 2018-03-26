@@ -50,7 +50,7 @@ namespace GameOfThronesTournamentWPF
                 }
             }
 
-            ResList.ItemsSource = houses;
+            ResList.DataContext = houses;
         }
 
         private async void ShowChars_Click(object sender, RoutedEventArgs e)
@@ -130,6 +130,11 @@ namespace GameOfThronesTournamentWPF
 
                 MessageBox.Show("List of houses saved !");
             }
+        }
+
+        public void ListViewItem_PreviewMouseLeftButtonDown(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
